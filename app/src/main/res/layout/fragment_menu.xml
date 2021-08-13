@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragmentMenu"
+    tools:context=".MenuFragment">
+
+
+    <Button
+        android:id="@+id/bConnectSensor"
+        android:layout_width="284dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="48dp"
+        android:text="   Connect Sensor   "
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/bInitializeSensor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.158" />
+
+    <Button
+        android:id="@+id/bInitializeSensor"
+        android:layout_width="284dp"
+        android:layout_height="57dp"
+        android:text="   Initialize Sensor   "
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/bSelectExercise"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/bConnectSensor"
+        app:layout_constraintTop_toBottomOf="@+id/bConnectSensor"
+        app:layout_constraintVertical_bias="0.294" />
+
+    <Button
+        android:id="@+id/bSelectExercise"
+        android:layout_width="284dp"
+        android:layout_height="57dp"
+        android:text="@string/setupExercise"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/bStartEndPos"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/bConnectSensor"
+        app:layout_constraintTop_toBottomOf="@+id/bInitializeSensor"
+        app:layout_constraintVertical_bias="0.422" />
+
+    <Button
+        android:id="@+id/bStartEndPos"
+        android:layout_width="284dp"
+        android:layout_height="57dp"
+        android:text="   Start/End Positions   "
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/bBeginExercise"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/bConnectSensor"
+        app:layout_constraintTop_toBottomOf="@+id/bSelectExercise"
+        app:layout_constraintVertical_bias="0.554" />
+
+    <Button
+        android:id="@+id/bBeginExercise"
+        android:layout_width="284dp"
+        android:layout_height="57dp"
+        android:text="   Begin Exercise   "
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/bExerciseSummary"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/bConnectSensor"
+        app:layout_constraintTop_toBottomOf="@+id/bStartEndPos"
+        app:layout_constraintVertical_bias="0.692" />
+
+    <Button
+        android:id="@+id/bExerciseSummary"
+        android:layout_width="284dp"
+        android:layout_height="57dp"
+        android:text="   Exercise Summary   "
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/bConnectSensor"
+        app:layout_constraintTop_toBottomOf="@+id/bBeginExercise"
+        app:layout_constraintVertical_bias="0.827" />
+
+    <Button
+        android:id="@+id/bPreviousPage"
+        android:layout_width="284dp"
+        android:layout_height="45dp"
+        android:text="   Previous Page   "
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.961" />
+
+    <Button
+        android:id="@+id/bContinue"
+        android:layout_width="281dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="80dp"
+        android:text="   Continue   "
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bPreviousPage"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

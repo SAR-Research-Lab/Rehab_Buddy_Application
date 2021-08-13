@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.probmatic.grapher">
+
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"></uses-permission>
+    <uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <application
+        android:allowBackup="true"
+        android:requestLegacyExternalStorage="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning"
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name="com.probmatic.grapher.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape"
+            android:windowSoftInputMode="adjustNothing">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name="com.shimmerresearch.android.guiUtilities.ShimmerBluetoothDialog"
+            android:theme="@android:style/Theme.Dialog"
+            android:screenOrientation="sensorLandscape">
+        </activity>
+        <activity
+            android:name="com.probmatic.grapher.DeviceListActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape">
+        </activity>
+        <activity
+            android:name="com.probmatic.grapher.ChooserActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape">
+        </activity>
+        <activity
+            android:name="com.probmatic.grapher.UserActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape">
+
+
+
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.probmatic.grapher.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"
+                tools:replace="android:resource"/>
+        </provider>
+    </application>
+
+</manifest>

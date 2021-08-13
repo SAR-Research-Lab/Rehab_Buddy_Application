@@ -1,0 +1,113 @@
+<resources>
+    <string name="app_name">Rehab\nBuddy</string>
+    <string name="connectPrompt">Please select shimmer device from the list.</string>
+    <string name="connectFailure">Shimmer is having trouble connecting, please ensure it is blinking blue. Look at the ID on the back, does it match the one from the pop up?\n\nPlease retry</string>
+    <string name="descriptionTherapist">Select an exercise from the drop down menu. Or write a new one in the drop down menu, set the parameters, record start and stop positions, and save.</string>
+    <string name="descriptionConnect">Connect your sensor to get started. Turn on a sensor with the switch on the side and select it from the list. The ID is on the back of the sensor.</string>
+    <string name="descriptionConnecting">Loading sensor</string>
+    <string name="descriptionConnected">Shimmer has connected. Please click CONTINUE to proceed.
+        Complete initialization, then setup exercises to begin.</string>
+    <string name="descriptionRecordStop">Please stand still in your stop position.</string>
+    <string name="descriptionRecordComplete">Complete! Please name and click CONTINUE to save</string>
+    <string name="descriptionRecordStart">Please stand still in your start position.</string>
+    <string name='descriptionComplete'>Complete</string>
+    <string name="goBack">   Previous Page   </string>
+    <string name="initializeDirections">Please hold still and click initialize.</string>
+    <string name="initializingInProgress">Initialization started. Please stay still and stand by.</string>
+    <string name="initializingComplete">Initialization complete. Please continue.</string>
+    <string name="repsComp">Reps Completed</string>
+    <string name="setsComp">Sets Completed</string>
+    <string name="setupExercise">   Setup Exercise   </string>
+    <string name="step1">   Please select an exercise from the dropdown menu   </string>
+
+
+
+    <string name="text_accounts">All Accounts</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="text_login">Login</string>
+    <string name="text_register">Register</string>
+    <string name="error_message_name">Enter Valid Username</string>
+    <string name="error_message_email">Enter Valid Email</string>
+    <string name="error_message_password">Enter Password</string>
+    <string name="success_message">Registration Successful</string>
+    <string name="text_not_member">No account yet? Create one.</string>
+    <string name="text_already_member">Already a member? Login.</string>
+    <string name="error_email_exists">Email Already Exists</string>
+    <string name="error_password_match">Password Does Not Match</string>
+    <string name="error_valid_email_password">Wrong Email or Password</string>
+    <string name="action_settings">Settings</string>
+    <string name="csv_warning">NOTE: CSV Settings are only valid on initial boot, please reboot to modify   </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- TODO: Clean up all of these -->
+
+    <string name="label_google_sign_in">Firebase + Google Sign In</string>
+    <string name="desc_google_sign_in">Use a Google Sign In credential to authenticate with Firebase.</string>
+
+    <string name="label_main_start_page">Home Page</string>
+    <string name="desc_main_start_page">Click here to navigate to the home page.</string>
+
+
+    <string name="label_emailpassword">Email/Password Authentication</string>
+    <string name="desc_emailpassword">Use an email and password to authenticate with Firebase.</string>
+
+    <string name="label_passwordless">Passwordless Authentication</string>
+    <string name="desc_passwordless">Use only an email to authenticate with Firebase.</string>
+
+    <string name="label_firebase_ui">FirebaseUI Auth</string>
+    <string name="desc_firebase_ui">Use the FirebaseUI-Android library to authenticate with Firebase.</string>
+
+    <string name="hint_user_id">User ID</string>
+    <string name="get_custom_token">Get Token</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Create Account</string>
+    <string name="send_link">Send Link</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="verify_email">Verify</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="loading">Loading…</string>
+    <string name="custom_token">Custom Token</string>
+    <string name="signed_in">Signed In</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="token_null">Token: null</string>
+    <string name="desc_firebase_lockup">Firebase logo and name</string>
+    <string name="auth_failed">Authentication failed</string>
+    <string name="hint_verification_code">Verification Code</string>
+    <string name="status_code_sent">Code Sent</string>
+    <string name="status_verification_failed">Verification failed</string>
+    <string name="status_verification_succeeded">Verification succeeded</string>
+    <string name="status_sign_in_failed">Sign-in failed</string>
+    <string name="instant_validation">(instant validation)</string>
+
+    <string name="firebase_status_fmt">Firebase UID: %s</string>
+    <string name="firebase_user_management">Firebase User Management</string>
+
+    <string name="google_status_fmt">Google User: %s</string>
+    <string name="google_title_text">Google Sign In</string>
+
+    <string name="status_link_found">Link received, enter email to sign in.</string>
+
+
+    <string name="firebaseui_status_fmt">Firebase User: %s</string>
+    <string name="firebaseui_title_text">FirebaseUI Auth</string>
+
+    <string name="id_fmt">User ID: %s</string>
+    <string name="email_fmt">Email: %s</string>
+
+    <string name="enroll_mfa">Enroll MFA</string>
+    <string name="unenroll_mfa">Unenroll MFA</string>
+    <string name="reload">Reload</string>
+
+    <string name="custom_auth_signin_status_user">User ID: %s</string>
+    <string name="custom_auth_signin_status_failed">Error: sign in failed</string>
+
+    <string name="error_sign_in_failed">Sign in failed, see logs for details.</string>
+    <string name="multi_factor_signed_out">You are not signed in. To use this sample, first navigate to the Email/Password example to sign in and then return here to enroll in multi-factor auth.</string>
+
+</resources>

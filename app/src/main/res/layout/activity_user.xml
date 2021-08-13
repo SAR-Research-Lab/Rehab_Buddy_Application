@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/bsignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="262dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="262dp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/bsignOut"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="290dp"
+                android:layout_marginEnd="251dp"
+                android:layout_marginBottom="37dp"
+                android:text="Sign Out" />
+
+            <TextView
+                android:id="@+id/status_textview"
+                android:layout_width="574dp"
+                android:layout_height="109dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="93dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="429dp"
+                android:textSize="20dp" />
+
+
+            <Button
+                android:id="@+id/bDataBaseSample"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="289dp"
+                android:layout_marginEnd="252dp"
+                android:layout_marginBottom="135dp"
+                android:text="Register User to Database" />
+
+            <Button
+                android:id="@+id/buttonChoose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="461dp"
+                android:layout_marginBottom="261dp"
+                android:layout_weight="1"
+                android:text="Choose" />
+
+            <Button
+                android:id="@+id/buttonUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/buttonChoose"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="720dp"
+                android:layout_weight="1"
+                android:text="Upload" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="194dp"
+                android:layout_height="247dp" />
+
+        </RelativeLayout>
+
+
+</LinearLayout>
+

@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "789446872365",
+    "firebase_url": "https://rehabbuddy-84199.firebaseio.com",
+    "project_id": "rehabbuddy-84199",
+    "storage_bucket": "rehabbuddy-84199.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789446872365:android:0e1d4f97e66d840490d7a4",
+        "android_client_info": {
+          "package_name": "com.probmatic.RehabBuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "789446872365-6q760ep56fh53ul7vaq3ko485jhgd4gv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.probmatic.RehabBuddy",
+            "certificate_hash": "579000916249944c1a024751764e47366375c26e"
+          }
+        },
+        {
+          "client_id": "789446872365-a1ksdcjen7ervmev7dtmp1a9hfpuukkj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.probmatic.RehabBuddy",
+            "certificate_hash": "1da126bc0fcbc7575d0d10553207000d3f2155cb"
+          }
+        },
+        {
+          "client_id": "789446872365-d7snssiac9rgsap91jb4junfdhg7gp0a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.probmatic.RehabBuddy",
+            "certificate_hash": "d31c07059993c9297f8cefe1fb2f558ae1926da8"
+          }
+        },
+        {
+          "client_id": "789446872365-2avakili8fqlf2vf03mepshf6ha42lel.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN4Lm7sTN_XU557lLNAUyc8xn6niGUE2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "789446872365-2avakili8fqlf2vf03mepshf6ha42lel.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

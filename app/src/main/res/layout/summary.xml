@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/summaryTablet"
+    tools:context=".MainActivity">
+
+    <Spinner
+        android:id="@+id/sExerciseGraphSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="592dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tExerciseSummary"
+        app:layout_constraintTop_toTopOf="@+id/tExerciseSummary"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tExerciseSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Exercise Summary Information"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tAvgROM"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
+        android:text="Range of Motion"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tRbAvgROM"
+        app:layout_constraintStart_toStartOf="@+id/tRbAvgROM" />
+
+
+    <!--Avg POM Error (°)\n(Lower is better)-->
+    <TextView
+        android:id="@+id/tPOMSummary"
+        android:layout_width="160dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="2dp"
+        android:includeFontPadding="false"
+        android:padding="1sp"
+        android:paddingStart="1sp"
+        android:paddingLeft="1sp"
+        android:paddingTop="1sp"
+        android:paddingEnd="1sp"
+        android:paddingRight="1sp"
+        android:paddingBottom="1sp"
+        android:text="Plane of Motion"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tRbPOM"
+        app:layout_constraintTop_toTopOf="@+id/tAvgROM" />
+
+    <TextView
+        android:id="@+id/tTotalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="Total Time"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tRbTotalTime"
+        app:layout_constraintTop_toTopOf="@+id/tPOMSummary" />
+
+    <TextView
+        android:id="@+id/tRB"
+        android:layout_width="174dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="364dp"
+        android:layout_marginTop="400dp"
+        android:text="Rehab Buddy"
+        android:textColor="#000"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tPT"
+        android:layout_width="174dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Physical Therapist"
+        android:textColor="#000"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="@+id/tRB"
+        app:layout_constraintTop_toBottomOf="@+id/tRB" />
+
+    <TextView
+        android:id="@+id/tNoF"
+        android:layout_width="174dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:text="No Feedback"
+        android:textColor="#000"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="@+id/tPT"
+        app:layout_constraintTop_toBottomOf="@+id/tPT" />
+
+
+    <TextView
+        android:id="@+id/tPtPOM"
+        android:layout_width="160dp"
+        android:layout_height="31dp"
+        android:text="N/A"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tRbPOM"
+        app:layout_constraintTop_toTopOf="@+id/tPtAvgROM" />
+
+    <TextView
+        android:id="@+id/tNoPOM"
+        android:layout_width="160dp"
+        android:layout_height="31dp"
+        android:text="N/A"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tPtPOM"
+        app:layout_constraintTop_toTopOf="@+id/tNoAvgROM" />
+
+    <TextView
+        android:id="@+id/tRbPOM"
+        android:layout_width="160dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="24dp"
+        android:text="N/A"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tRbAvgROM"
+        app:layout_constraintTop_toTopOf="@+id/tRbAvgROM" />
+
+    <TextView
+        android:id="@+id/tNoAvgROM"
+        android:layout_width="130dp"
+        android:layout_height="31dp"
+        android:text="N/A"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tPtAvgROM"
+        app:layout_constraintTop_toTopOf="@+id/tNoF" />
+
+    <TextView
+        android:id="@+id/tRbReps"
+        android:layout_width="102dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="N/A"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tRbHoldTime"
+        app:layout_constraintTop_toTopOf="@+id/tRbHoldTime" />
+
+    <TextView
+        android:id="@+id/tPtReps"
+        android:layout_width="102dp"
+        android:layout_height="wrap_content"
+        android:text="N/A"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tRbReps"
+        app:layout_constraintTop_toTopOf="@+id/tPtHoldTime" />
+
+    <TextView
+        android:id="@+id/tNoReps"
+        android:layout_width="102dp"
+        android:layout_height="wrap_content"
+        android:text="N/A"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tPtReps"
+        app:layout_constraintTop_toTopOf="@+id/tNoHoldTime" />
+
+    <TextView
+        android:id="@+id/tRbHoldTime"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="N/A"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tRbTotalTime"
+        app:layout_constraintTop_toTopOf="@+id/tRbTotalTime" />
+
+
+    <TextView
+        android:id="@+id/tPtHoldTime"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:text="N/A"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tRbHoldTime"
+        app:layout_constraintTop_toTopOf="@+id/tPtTotalTime" />
+
+    <TextView
+        android:id="@+id/tNoHoldTime"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:text="N/A"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tPtHoldTime"
+        app:layout_constraintTop_toTopOf="@+id/tNoTotalTime" />
+
+    <TextView
+        android:id="@+id/tRbTotalTime"
+        android:layout_width="102dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="24dp"
+        android:text="N/A"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tRbPOM"
+        app:layout_constraintTop_toTopOf="@+id/tRbPOM" />
+
+    <TextView
+        android:id="@+id/tPtTotalTime"
+        android:layout_width="102dp"
+        android:layout_height="31dp"
+        android:text="N/A"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tRbTotalTime"
+        app:layout_constraintTop_toTopOf="@+id/tPtPOM" />
+
+    <TextView
+        android:id="@+id/tNoTotalTime"
+        android:layout_width="102dp"
+        android:layout_height="31dp"
+        android:text="N/A"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tPtTotalTime"
+        app:layout_constraintTop_toTopOf="@+id/tNoPOM" />
+
+    <TextView
+        android:id="@+id/tPtAvgROM"
+        android:layout_width="130dp"
+        android:layout_height="31dp"
+        android:text="N/A"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tRbAvgROM"
+        app:layout_constraintTop_toTopOf="@+id/tPT" />
+
+    <TextView
+        android:id="@+id/tRbAvgROM"
+        android:layout_width="130dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="24dp"
+        android:text="N/A"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tRB"
+        app:layout_constraintTop_toTopOf="@+id/tRB" />
+
+    <TextView
+        android:id="@+id/tHoldTime"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:text="Average Hold Time"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tRbHoldTime"
+        app:layout_constraintTop_toTopOf="@+id/tTotalTime" />
+
+    <TextView
+        android:id="@+id/tReps"
+        android:layout_width="165dp"
+        android:layout_height="55dp"
+        android:text="Total Repetitions"
+        android:textColor="#000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tRbReps"
+        app:layout_constraintTop_toTopOf="@+id/tHoldTime" />
+
+    <!--Container Crap-->
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chartSummary"
+        android:layout_width="921dp"
+        android:layout_height="249dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="@+id/tExerciseSummary"
+        app:layout_constraintTop_toBottomOf="@+id/tExerciseSummary" />
+
+    <TextView
+        android:id="@+id/emptyContainer"
+        android:layout_width="926dp"
+        android:layout_height="247dp"
+        android:layout_marginStart="352dp"
+        android:layout_marginTop="324dp"
+        android:background="@drawable/blackborder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="926dp"
+        android:layout_height="4dip"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="64dp"
+        android:background="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/emptyContainer"
+        app:layout_constraintTop_toTopOf="@+id/emptyContainer" />
+
+    <View
+        android:layout_width="926dp"
+        android:layout_height="4dip"
+        android:layout_marginTop="116dp"
+        android:background="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/emptyContainer"
+        app:layout_constraintTop_toTopOf="@+id/emptyContainer" />
+
+
+    <View
+        android:layout_width="926dp"
+        android:layout_height="4dip"
+        android:layout_marginTop="176dp"
+        android:background="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/emptyContainer"
+        app:layout_constraintTop_toTopOf="@+id/emptyContainer" />
+
+    <View
+        android:layout_width="4dp"
+        android:layout_height="247dip"
+        android:layout_marginStart="200dp"
+        android:background="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/emptyContainer"
+        app:layout_constraintTop_toTopOf="@+id/emptyContainer" />
+
+    <View
+        android:layout_width="4dp"
+        android:layout_height="247dip"
+        android:layout_marginStart="356dp"
+        android:background="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/emptyContainer"
+        app:layout_constraintTop_toTopOf="@+id/emptyContainer" />
+
+    <View
+    android:layout_width="4dp"
+    android:layout_height="247dip"
+    android:layout_marginStart="540dp"
+    android:background="@android:color/black"
+    app:layout_constraintStart_toStartOf="@+id/emptyContainer"
+    app:layout_constraintTop_toTopOf="@+id/emptyContainer" />
+
+    <View
+        android:layout_width="4dp"
+        android:layout_height="247dip"
+        android:layout_marginStart="664dp"
+        android:background="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/emptyContainer"
+        app:layout_constraintTop_toTopOf="@+id/emptyContainer" />
+
+    <View
+        android:layout_width="4dp"
+        android:layout_height="247dip"
+        android:layout_marginStart="784dp"
+        android:background="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/emptyContainer"
+        app:layout_constraintTop_toTopOf="@+id/emptyContainer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
