@@ -1822,6 +1822,19 @@ public class MainActivity extends AppCompatActivity implements
                     sensor.state= State.MOVING_DOWN;
                     if (handles.an_guide.get(ptIndex-1).getY() < handles.end_zone_threshold)
                         state = HOLD_BOTTOM;
+                    //8/19/21
+                    /*
+                    if(!handles.an_error.isEmpty()) {
+                        nearestYIndex = 4 * Math.round(handles.an_error.get(0).getY() / 4);
+                        for (Entry e : handles.decline) {
+                            if(e.getY() == nearestYIndex) {
+                                ptIndex = ((int) e.getX() / 2) - 1;
+                                break;
+                            }
+                        }
+                    }
+
+                     */
                     break;
 
                 case HOLD_BOTTOM: // Condition if arm is back in start position
@@ -1860,6 +1873,7 @@ public class MainActivity extends AppCompatActivity implements
                     //if (exercise.toc < holdTime) {
                     //   mCountFeedback.setText("");
                     if (sensor.state == State.HOLD_TOP && (exercise.toc >= holdTime)){
+                        /*
                         if(!handles.an_error.isEmpty()) {
                             nearestYIndex = 4 * Math.round(handles.an_error.get(0).getY() / 4);
                             for (Entry e : handles.decline) {
@@ -1869,6 +1883,8 @@ public class MainActivity extends AppCompatActivity implements
                                 }
                             }
                         }
+
+                         */
                         handles.an_color = Color.GREEN;
                         mCountFeedback.setText(DOWN);
                         mDirectionFeedback.setText("Move arm down");
