@@ -1790,7 +1790,7 @@ public class MainActivity extends AppCompatActivity implements
                 public void onFinish() {
                     tHoldTime.setText("Done!");
                     ptEnable = true;
-                    //4/30/21
+                    //4/30/21 commented out state = MOVING_DOWN;
                     //state = MOVING_DOWN;
                     cancel();
                 }
@@ -1822,7 +1822,7 @@ public class MainActivity extends AppCompatActivity implements
                     sensor.state= State.MOVING_DOWN;
                     if (handles.an_guide.get(ptIndex-1).getY() < handles.end_zone_threshold)
                         state = HOLD_BOTTOM;
-                    //8/19/21
+                    //8/19/21 commented out
                     /*
                     if(!handles.an_error.isEmpty()) {
                         nearestYIndex = 4 * Math.round(handles.an_error.get(0).getY() / 4);
@@ -1873,6 +1873,7 @@ public class MainActivity extends AppCompatActivity implements
                     //if (exercise.toc < holdTime) {
                     //   mCountFeedback.setText("");
                     if (sensor.state == State.HOLD_TOP && (exercise.toc >= holdTime)){
+                       //Removed 8/19/21
                         /*
                         if(!handles.an_error.isEmpty()) {
                             nearestYIndex = 4 * Math.round(handles.an_error.get(0).getY() / 4);
