@@ -1875,6 +1875,7 @@ public class MainActivity extends AppCompatActivity implements
                     if (sensor.state == State.HOLD_TOP && (exercise.toc >= holdTime)){
                        //Removed 8/19/21
                         /*
+                        
                         if(!handles.an_error.isEmpty()) {
                             nearestYIndex = 4 * Math.round(handles.an_error.get(0).getY() / 4);
                             for (Entry e : handles.decline) {
