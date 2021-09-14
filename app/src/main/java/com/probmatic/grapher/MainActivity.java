@@ -560,6 +560,8 @@ public class MainActivity extends AppCompatActivity implements
         exercise.qStart.y = temp[2]/rStartData.size();
         exercise.qStart.z = temp[3]/rStartData.size();
 
+        exercise.qStart.normalize();
+
         Log.i(LOG_TAG, "Calibrated qStart: " + exercise.qStart.w + ' ' + exercise.qStart.x
                 + ' ' + exercise.qStart.y + ' ' + exercise.qStart.z);
 
@@ -626,6 +628,8 @@ public class MainActivity extends AppCompatActivity implements
         exercise.qEnd.x = temp[1]/rStopData.size();
         exercise.qEnd.y = temp[2]/rStopData.size();
         exercise.qEnd.z = temp[3]/rStopData.size();
+
+        exercise.qEnd.normalize();
 
         Log.i(LOG_TAG, "Calibrated qEnd: " + exercise.qEnd.w + ' ' + exercise.qEnd.x + ' ' +
                 exercise.qEnd.y + ' ' + exercise.qEnd.z);
@@ -1873,9 +1877,9 @@ public class MainActivity extends AppCompatActivity implements
                     //if (exercise.toc < holdTime) {
                     //   mCountFeedback.setText("");
                     if (sensor.state == State.HOLD_TOP && (exercise.toc >= holdTime)){
-                       //Removed 8/19/21
+                        //Removed 8/19/21
                         /*
-                        
+
                         if(!handles.an_error.isEmpty()) {
                             nearestYIndex = 4 * Math.round(handles.an_error.get(0).getY() / 4);
                             for (Entry e : handles.decline) {
