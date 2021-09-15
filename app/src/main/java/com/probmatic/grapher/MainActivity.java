@@ -729,13 +729,14 @@ public class MainActivity extends AppCompatActivity implements
         bCalibrateOnFly.setBackgroundColor(Color.LTGRAY);
         //To create a simple delay
         Handler handler = new Handler();
-        sensor.calibrate = true;
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+                sensor.calibrate = true;
                 bCalibrateOnFly.setBackgroundColor(Color.rgb(0,128,0));
             }
-        }, 100);
+        }, 2000);
 
     }
 
