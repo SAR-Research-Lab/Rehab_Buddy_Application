@@ -548,6 +548,8 @@ public class MainActivity extends AppCompatActivity implements
 
         exercise.qStart = new Quat4d();
         float[] temp = {0f, 0f, 0f, 0f};
+        float[] temp_stdev_pow = {0f, 0f, 0f, 0f};
+        double[] temp_stdev = {0f, 0f, 0f, 0f};
         for(Quat4d qC : rStartData){
             temp[0] += qC.w;
             temp[1] += qC.x;
@@ -560,22 +562,50 @@ public class MainActivity extends AppCompatActivity implements
         exercise.qStart.y = temp[2]/rStartData.size();
         exercise.qStart.z = temp[3]/rStartData.size();
 
-        exercise.qStart.normalize();
-
-        Log.i(LOG_TAG, "Calibrated qStart: " + exercise.qStart.w + ' ' + exercise.qStart.x
-                + ' ' + exercise.qStart.y + ' ' + exercise.qStart.z);
-
-        TextView tPosFeedback = (TextView) findViewById(R.id.tPosFeedback);
-        TextView tStartPosFeedback = (TextView) findViewById(R.id.tStartPosFeedback);
-        try {
-            tStartPosFeedback.setText(getApplicationContext().getResources().getString(R.string.descriptionComplete));
-        } catch (Exception e){
-            e.printStackTrace();
+        for(Quat4d qC : rStartData){
+            temp_stdev_pow[0] += Math.pow((qC.w - exercise.qStart.w),2);
+            temp_stdev_pow[1] += Math.pow((qC.x - exercise.qStart.x),2);
+            temp_stdev_pow[2] += Math.pow((qC.y - exercise.qStart.y),2);
+            temp_stdev_pow[3] += Math.pow((qC.z - exercise.qStart.z),2);
         }
 
+        temp_stdev[0] = Math.sqrt(temp_stdev_pow[0]/(rStartData.size()-1));
+        temp_stdev[1] = Math.sqrt(temp_stdev_pow[1]/(rStartData.size()-1));
+        temp_stdev[2] = Math.sqrt(temp_stdev_pow[2]/(rStartData.size()-1));
+        temp_stdev[3] = Math.sqrt(temp_stdev_pow[3]/(rStartData.size()-1));
+
+        double highest_stdev = temp_stdev[0];
+        for(int i = 1; i<4; i++){
+            if(temp_stdev[i]>highest_stdev){
+                highest_stdev = temp_stdev[i];
+            }
+        }
+        TextView tPosFeedback = (TextView) findViewById(R.id.tPosFeedback);
+        if(highest_stdev < 0.01) {
+            exercise.qStart.normalize();
+
+            Log.i(LOG_TAG, "Calibrated qStart: " + exercise.qStart.w + ' ' + exercise.qStart.x
+                    + ' ' + exercise.qStart.y + ' ' + exercise.qStart.z);
+
+
+            TextView tStartPosFeedback = (TextView) findViewById(R.id.tStartPosFeedback);
+            try {
+                tStartPosFeedback.setText(getApplicationContext().getResources().getString(R.string.descriptionComplete));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else{
+            TextView tStartPosFeedback = (TextView) findViewById(R.id.tStartPosFeedback);
+            try {
+                tStartPosFeedback.setText("Please redo start position");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
         if(exercise.qEnd == null)
             try {
-                tPosFeedback.setText("Start position set, please set end position");
+                tPosFeedback.setText("Start position set. If complete, please set end position");
             } catch (Exception e){
                 e.printStackTrace();
             }
@@ -617,6 +647,8 @@ public class MainActivity extends AppCompatActivity implements
 
         exercise.qEnd = new Quat4d();
         float[] temp = {0f, 0f, 0f, 0f};
+        float[] temp_stdev_pow = {0f, 0f, 0f, 0f};
+        double[] temp_stdev = {0f, 0f, 0f, 0f};
         for(Quat4d qC : rStopData){
             temp[0] += qC.w;
             temp[1] += qC.x;
@@ -629,19 +661,47 @@ public class MainActivity extends AppCompatActivity implements
         exercise.qEnd.y = temp[2]/rStopData.size();
         exercise.qEnd.z = temp[3]/rStopData.size();
 
-        exercise.qEnd.normalize();
-
-        Log.i(LOG_TAG, "Calibrated qEnd: " + exercise.qEnd.w + ' ' + exercise.qEnd.x + ' ' +
-                exercise.qEnd.y + ' ' + exercise.qEnd.z);
-
-        TextView tPosFeedback = (TextView) findViewById(R.id.tPosFeedback);
-        TextView tStopPosFeedback = (TextView) findViewById(R.id.tStopPosFeedback);
-        try {
-            tStopPosFeedback.setText(getApplicationContext().getResources().getString(R.string.descriptionComplete));
-        } catch (Exception e){
-            e.printStackTrace();
+        for(Quat4d qC : rStopData){
+            temp_stdev_pow[0] += Math.pow((qC.w - exercise.qEnd.w),2);
+            temp_stdev_pow[1] += Math.pow((qC.x - exercise.qEnd.x),2);
+            temp_stdev_pow[2] += Math.pow((qC.y - exercise.qEnd.y),2);
+            temp_stdev_pow[3] += Math.pow((qC.z - exercise.qEnd.z),2);
         }
 
+        temp_stdev[0] = Math.sqrt(temp_stdev_pow[0]/(rStopData.size()-1));
+        temp_stdev[1] = Math.sqrt(temp_stdev_pow[1]/(rStopData.size()-1));
+        temp_stdev[2] = Math.sqrt(temp_stdev_pow[2]/(rStopData.size()-1));
+        temp_stdev[3] = Math.sqrt(temp_stdev_pow[3]/(rStopData.size()-1));
+
+        double highest_stdev = temp_stdev[0];
+        for(int i = 1; i<4; i++){
+            if(temp_stdev[i]>highest_stdev){
+                highest_stdev = temp_stdev[i];
+            }
+        }
+        TextView tPosFeedback = (TextView) findViewById(R.id.tPosFeedback);
+
+        if(highest_stdev < 0.01) {
+            exercise.qEnd.normalize();
+
+            Log.i(LOG_TAG, "Calibrated qEnd: " + exercise.qEnd.w + ' ' + exercise.qEnd.x + ' ' +
+                    exercise.qEnd.y + ' ' + exercise.qEnd.z);
+
+            TextView tStopPosFeedback = (TextView) findViewById(R.id.tStopPosFeedback);
+            try {
+                tStopPosFeedback.setText(getApplicationContext().getResources().getString(R.string.descriptionComplete));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else{
+            TextView tStopPosFeedback = (TextView) findViewById(R.id.tStopPosFeedback);
+            try {
+                tStopPosFeedback.setText("Please redo end position");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
         if(exercise.qStart == null){
             try {
                 tPosFeedback.setText("End position set, please set start position");
